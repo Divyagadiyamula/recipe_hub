@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0ff319aedc.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-image: url(https://wallpaperaccess.com/full/1537562.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-size: 100% 100%;
+    }
+    .flex{
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 30px;
+        position: relative;
+    }
+    #logo{
+        position: absolute;
+        right: 1300px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        z-index: -1;
+    }
+    #search{
+        left: 950px;
+        height: 10px;
+        width: 20px;
+        z-index: 1;
+        position: absolute;
+        top: 57px;
+        
+    } 
+    nav{
+        height: 100px;
+        width: 100%;
+    }
+    #tbar{
+        margin-right: 250px;
+         height: 20px; 
+         width: 300px; 
+         position: absolute; 
+         left: 450px; 
+         z-index: -1; 
+         top: 20px;
+    }
+    #add{
+        position:absolute;height: 20px;width: 300px;z-index: -1;
+        top:20px;
+        left:450px; 
+    }
+    nav{
+        height: 30px;
+        width: 100%;
+    }
+#sbar{
+    position: absolute;
+    width: 500px;
+    height: 20px;
+    left: 480px;
+    top: 50px;
+}
+#msg{
+        margin-top: 100px;
+        margin-left: 100px;
+        font-size: 50px;
+    }
+
+.sfooter{
+    height: 500px;
+    width: 100%;
+    background-color: #e6e7e8;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    position: sticky;
+}
+h5{
+    color: #e11b23;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 5px 0px 10px;
+    
+}
+li{
+    /* color: #58595b; */
+    font-size: 30px;
+    list-style-type: none;
+    font-weight: 900;
+  
+}
+.fbox li{
+    padding: 20px 0px 10px;
+   margin-left: 300px;
+}
+
+h6{
+    margin-top: 500px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+}
+h5{
+    font-size: 35px;
+    float: right;
+    padding: 25px;
+   
+
+}
+.flex h1{
+    display: flex;
+    justify-content: center;
+}
+.recipes{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        column-gap: 220px;
+       
+    } 
+    .flex1{
+        display: flex;
+        justify-content: center;
+        column-gap: 100px;
+       
+
+    }
+    
+    #msg{
+        margin-top: 100px;
+        margin-left: 100px;
+        font-size: 50px;
+    }
+    nav{
+        height: 30px;
+        width: 100%;
+    }
+.flex21{
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+.flex2, .flex3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.flex2 a, .flex3 a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 200px; /* Ensure the links have the same width */
+}
+
+.flex31{
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+
+.flex4{
+    display: flex;
+    justify-content: center;
+}
+.flex41{
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+.flex1{
+        transition: transform 0.3s ease;
+    }
+    .flexitems:hover img{
+        transform: scale(1.2);
+        border-radius: 5px;
+    }
+.flexitems{
+    height: 300px;
+    
+} 
+
+.popover {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+    width: 700px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popover h3 {
+    margin-top: 0;
+}
+
+.popover button {
+    display: block;
+    margin-top: 200px;
+    width: 100%;
+    padding: 10px;
+    background: #e11b23;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.popover button:hover {
+    background: #c11a20;
+}
+</style>
+<body>
+    <nav>
+        <div class="flex">
+        <img src="./recipe_logp.jpg" alt="" id="logo">
+        <form id="searchForm" onsubmit="return searchRecipes()"><input id="sbar" placeholder="SearchRecipes" value="">
+        <button type="submit"><img src="./icons8-search.gif" alt="" id="search"></button> </form>
+        <a href="" style="text-decoration: none; color: blue;"><h1>Home</h1></a>
+        <a href="./about.html" style="text-decoration: none; color: blue;"><h1>About</h1></a>
+        <a href="#ContactUs" style="text-decoration: none; color: blue;"><h1>ContactUs</h1></a>
+        <a href="recipe.html" style="text-decoration: none; color: blue;"><h1>Recipes</h1></a>
+       </div>
+    </nav>
+    <h1 id="msg">welcome to Recipes Hub! <br>Choose the right recipe. <br>Try it,cook it and Taste it with marvileous experience</h1>
+    <div class="recipes">
+        <a href="" style="text-decoration: none;"><h3>Chicken</h3></a>
+        <a href="" style="text-decoration: none;" ><h3 >Salad</h3></a>
+        <a href="" style="text-decoration: none; " ><h3 >Diet</h3></a>
+        <a href="" style="text-decoration: none; "><h3>Cake</h3></a>
+        <a href="" style="text-decoration: none; "><h3 >Mutton</h3></a>
+        </div>
+        <div class="flex1">
+           <div class="flexitems"><a href=""><img src="https://www.thespruceeats.com/thmb/Y68DUpo65XDBee5SarwPw0H5mOo=/6016x4016/filters:fill(auto,1)/durban-chicken-curry-recipe-39451-hero-01-1924bfb1eeaa403c8d26a3bca9f68884.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+           <div class="flexitems"><a href=""><img src="http://img.taste.com.au/QaDKlckA/taste/2016/11/fresh-summer-vegetable-salad-91664-1.jpeg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+           <div class="flexitems"><a href=""><img src="http://www.valyastasteofhome.com/wp-content/uploads/2015/06/061.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+           <div class="flexitems"><a href=""><img src="https://hispanaglobal.net/wp-content/uploads/2020/09/Honey-Cake-Set-5-4.jpg" alt="" height="200px" width="200px" style="border-radius: 10px; "></a></div>
+           <div class="flexitems"><a href=""><img src="https://spiceeats.com/wp-content/uploads/2020/07/Mutton-Fry.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+        </div>
+        <div class="flex2">
+            <a href="" style="text-decoration: none;" ><h3 id="pizza">Pizza</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="kaju">Barfi</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="veg">Sandwich</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="chik">Fish</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="cream">Pasta</h3></a>
+    
+        </div>
+        <div class="flex21">
+            <div class="flexitems"><a href=""><img src="https://ariston.com.au/media/RLW_8518_Web.jpg" alt="" height="200px" width="200px" style="border-radius: 10px; "></a></div>
+            <div class="flexitems"><a href=""><img src="https://3.bp.blogspot.com/-EUC9UL8mrKI/UKEGT47CoSI/AAAAAAAADxc/YBdt8QciYi8/s1600/Kaju+Katli+Recipe.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://i.pinimg.com/originals/a5/f2/10/a5f21054fcc0f406d154a1d151fa1f04.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://i.redd.it/hwmtdtp4w5551.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://feastingisfun.com/wp-content/uploads/2017/05/IMG_2315.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+        </div>
+        <div class="flex3">
+            <a href="" style="text-decoration: none;" ><h3 id="panner">Panner</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="bread">Bread Omlet</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="Egg">Puffs</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="c65">Snacks</h3></a>
+            <a href="" style="text-decoration: none;"><h3 id="french">Veg</h3></a>
+        </div>
+        <div class="flex31">
+            <div class="flexitems"><a href=""><img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/sibyl_sunitha/Carrot_Aloo_Paneer_Curry_Recipe_.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://yummyindiankitchen.com/wp-content/uploads/2016/06/bread-omelette-sandwich-1.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://thegoldenlamb.com/wp-content/uploads/2021/09/egg-puff-recipe-indian-main.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://i2.wp.com/recipe52.com/wp-content/uploads/2019/04/Chicken-65-1-of-1-2.jpg?fit=1000%2C664&ssl=1" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+            <div class="flexitems"><a href=""><img src="https://glutenfreecuppatea.co.uk/wp-content/uploads/2020/02/crispy-baked-french-fries-recipe-featured-2.jpg" alt="" height="200px" width="200px" style="border-radius: 10px;"></a></div>
+        </div>
+    <footer>
+            <div class="sfooter">
+                <div class="fbox">
+                    <h5>Popular Posts</h5>
+                    <ul>
+                        <li>chicken masala</li>
+                        <li>prawn masala</li>
+                        <li>Chicken tikka</li>
+                        <li>Fish fry</li>
+                    </ul>
+                </div>
+                <div class="fbox">
+                    <h5>contact us</h5>
+                    <ul>
+                        <li>Email: RecipeHub@gmail.com</li>
+                        <li>Contact</li>
+                        <li>Location: India</li>
+                        <li>Website: RecipeHub.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="popover" id="popover">
+                <h3 id="recipeTitle"></h3>
+                <p id="recipeInstructions"></p>
+                <button onclick="closePopover()">Close</button>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>
